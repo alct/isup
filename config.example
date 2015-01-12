@@ -1,0 +1,13 @@
+;
+; IsUP? config file
+;
+
+; Path to the directory containing logs.
+logpath = "log/"
+
+[watchlist]
+
+; List of the websites to be monitored.
+; See README.md for instructions about how to add websites.
+;
+;url[] = "www.example.com"
