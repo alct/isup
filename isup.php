@@ -102,6 +102,7 @@ function export($src)
 {
     $config = $GLOBALS['config'];
 
+    $src  = base64_encode($src);
     $src  = $config['logpath'] . $src . '.log';
 
     $dest = $src . '.json';
@@ -149,7 +150,7 @@ function log($url)
 {
     $config = $GLOBALS['config'];
 
-    $logfile = $config['logpath'] . $url . '.log';
+    $logfile = $config['logpath'] . base64_encode($url) . '.log';
     $status  = check($url) ? 1 : 0;
     $content = time() . ' ' . $status . PHP_EOL;
 
