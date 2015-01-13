@@ -96,15 +96,15 @@ function cli($value)
  * Combine and export a given raw log to a JSON file.
  *
  * @param   string  $src
- * @param   string  $dest
  * @return  bool
  */
-function export($src, $dest = null)
+function export($src)
 {
     $config = $GLOBALS['config'];
 
     $src  = $config['logpath'] . $src . '.log';
-    $dest = ! empty($dest) ? $dest : $src . '.json';
+
+    $dest = $src . '.json';
 
     if (! $handle = @fopen($src, 'r')) return false;
 
