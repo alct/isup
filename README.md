@@ -60,6 +60,14 @@ Generate JSON based on the logs and write the result to separate files.
 php /path/to/isup.php -e
 ```
 
+### -w
+
+Write the watchlist to standard output.
+
+```bash
+php /path/to/isup.php -e
+```
+
 ## License
 
 [GPLv3](LICENSE)

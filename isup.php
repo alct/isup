@@ -8,7 +8,7 @@ chdir(realpath(dirname(__FILE__)));
 
 // CLI options
 
-$opt = getopt('a:c:e');
+$opt = getopt('a:c:ew');
 
 
 // Get config
@@ -207,6 +207,15 @@ if (array_key_exists('a', $opt)) {
 
             cli('failed to generate json for "' . $url . '"');
         }
+    }
+
+} elseif (array_key_exists('w', $opt)) {
+
+    cli('watchlist');
+
+    foreach ($config['url'] as $url ) {
+
+        echo '- ' . $url . PHP_EOL;
     }
 
 } elseif (empty($opt)) {
