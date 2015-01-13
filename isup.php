@@ -225,11 +225,11 @@ if (array_key_exists('a', $opt)) {
 
         if (log($url)) {
 
-            cli('successfully created logfile for "' . $url . '"');
+            cli('successfully updated logfile for "' . $url . '"');
 
         } else {
 
-            cli('failed to create logfile for "' . $url . '"');
+            cli('failed to update logfile for "' . $url . '"');
         }
     }
 }
