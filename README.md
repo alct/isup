@@ -65,7 +65,7 @@ php /path/to/isup.php -e
 Write the watchlist to standard output.
 
 ```bash
-php /path/to/isup.php -e
+php /path/to/isup.php -w
 ```
 
 ## License
