@@ -111,7 +111,7 @@ function export($src)
 
     $data = [];
 
-    while(! feof($handle)){
+    while (! feof($handle)) {
 
         $line = fgets($handle);
 
