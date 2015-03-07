@@ -67,12 +67,17 @@ Export current logs to JSON.
 isup -e
 ```
 
-### -w
 
-Write the watchlist to standard output.
 
 ```bash
-php /path/to/isup.php -w
+```
+
+### -l
+
+List monitored resources and IDs.
+
+```bash
+isup -l
 ```
 
 ## License

@@ -213,7 +213,7 @@ if (array_key_exists('a', $opt)) {
         }
     }
 
-} elseif (array_key_exists('w', $opt)) {
+} elseif (array_key_exists('l', $opt)) {
 
 
     foreach ($config['url'] as $url ) {
