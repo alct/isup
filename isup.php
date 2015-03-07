@@ -248,10 +248,14 @@ if (array_key_exists('a', $opt)) {
 
 } elseif (array_key_exists('l', $opt)) {
 
+    $i = 0;
+
+    echo "ID\tURL" . PHP_EOL;
 
     foreach ($config['url'] as $url ) {
 
-        echo '- ' . $url . PHP_EOL;
+        echo "$i\t" . $url . PHP_EOL;
+        $i++;
     }
 
 } elseif (array_key_exists('u', $opt)) {
