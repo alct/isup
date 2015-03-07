@@ -109,6 +109,7 @@ function export($url)
     if (! $handle = @fopen($src, 'r')) return false;
 
     $data = [];
+    $json = [];
 
     while (! feof($handle)) {
 
@@ -136,7 +137,10 @@ function export($url)
 
     unset($item);
 
-    return @file_put_contents($dest, json_encode($data, JSON_PRETTY_PRINT)) ? true : false;
+    $json['url'] = $url;
+    $json['log'] = $data;
+
+    return @file_put_contents($dest, json_encode($json, JSON_PRETTY_PRINT)) ? true : false;
 }
 
 /**
