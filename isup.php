@@ -234,4 +234,8 @@ if (array_key_exists('a', $opt)) {
             cli('failed to update log for "' . $url . '"');
         }
     }
+
+} elseif (empty($opt)) {
+
+    cli('missing argument');
 }
