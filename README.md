@@ -46,8 +46,8 @@ And... that's it.
 Add one or a series of URL(s) to the list of monitored resources.
 
 ```bash
-php /path/to/isup.php -a "www.website.com" # or
-php /path/to/isup.php -a "$(cat /path/to/list)" # where "list" is a file containing one URL per line
+isup -a "example.com" # or
+isup -a "$(cat /path/to/list)" # where "list" is a file containing one URL per line
 ```
 
 ### -c URL
@@ -55,8 +55,8 @@ php /path/to/isup.php -a "$(cat /path/to/list)" # where "list" is a file contain
 Check whether one or a series of resource(s) are available.
 
 ```bash
-php /path/to/isup.php -c "www.website.com" # or
-php /path/to/isup.php -c "$(cat /path/to/list)" # where "list" is a file containing one URL per line
+isup -c "example.com" # or
+isup -c "$(cat /path/to/list)" # where "list" is a file containing one URL per line
 ```
 
 ### -e
@@ -64,7 +64,7 @@ php /path/to/isup.php -c "$(cat /path/to/list)" # where "list" is a file contain
 Export current logs to JSON.
 
 ```bash
-php /path/to/isup.php -e
+isup -e
 ```
 
 ### -w
