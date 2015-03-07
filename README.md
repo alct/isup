@@ -43,7 +43,7 @@ And... that's it.
 
 ### -a URL
 
-Add one or a series of URL(s) to the watchlist.
+Add one or a series of URL(s) to the list of monitored resources.
 
 ```bash
 php /path/to/isup.php -a "www.website.com" # or
@@ -52,7 +52,7 @@ php /path/to/isup.php -a "$(cat /path/to/list)" # where "list" is a file contain
 
 ### -c URL
 
-Check whether one or a series of resource(s) are available and write the result to standard output.
+Check whether one or a series of resource(s) are available.
 
 ```bash
 php /path/to/isup.php -c "www.website.com" # or
@@ -61,7 +61,7 @@ php /path/to/isup.php -c "$(cat /path/to/list)" # where "list" is a file contain
 
 ### -e
 
-Generate JSON based on the logs and write the result to separate files.
+Export current logs to JSON.
 
 ```bash
 php /path/to/isup.php -e

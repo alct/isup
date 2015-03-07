@@ -7,7 +7,7 @@ logpath = "log/"
 
 [watchlist]
 
-; List of the websites to be monitored.
+; List of monitored resources.
 ; See README.md for instructions about how to add websites.
 ;
-;url[] = "www.example.com"
+;url[] = "example.com"

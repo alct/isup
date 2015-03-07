@@ -12,7 +12,7 @@ chdir(realpath(dirname(__FILE__)));
 $opt = getopt('a:c:ej:lu');
 
 
-// Get config
+// Config
 
 $configFile = 'config.ini';
 
@@ -26,7 +26,7 @@ $config = parse_ini_file($configFile);
 
 if (empty($config['url']) && empty($opt['a'])) {
 
-    cli('the watchlist is empty');
+    cli('no item in the list of monitored resources');
     exit;
 }
 
@@ -34,7 +34,7 @@ if (empty($config['url']) && empty($opt['a'])) {
 // Functions
 
 /**
- * Add a given URL to the watchlist.
+ * Add a given URL to the list of monitored resources.
  *
  * @param   string  $url
  * @return  bool
@@ -84,7 +84,7 @@ function check($url)
 }
 
 /**
- * Wrap a given string and print it to the terminal.
+ * Wrap a given string and print it.
  *
  * @param   string  $string
  */
@@ -94,7 +94,7 @@ function cli($string)
 }
 
 /**
- * Combine and export a given raw log to a JSON file.
+ * Export a given log to JSON.
  *
  * @param   string  $url
  * @return  bool
@@ -173,11 +173,11 @@ if (array_key_exists('a', $opt)) {
 
         if (add($url)) {
 
-            cli('"' . $url . '" successfully added to the watchlist');
+            cli('"' . $url . '" successfully added to the list of monitored resources');
 
         } else {
 
-            cli('failed to add "' . $url . '" to the watchlist');
+            cli('failed to add "' . $url . '" the list of monitored resources');
         }
     }
 
@@ -191,11 +191,11 @@ if (array_key_exists('a', $opt)) {
 
         if (check($url)) {
 
-            cli('"' . $url . '" seems to be up');
+            cli('"' . $url . '" is up');
 
         } else {
 
-            cli('"' . $url . '" seems to be down');
+            cli('"' . $url . '" is down');
         }
     }
 
@@ -205,17 +205,16 @@ if (array_key_exists('a', $opt)) {
 
         if (export($url)) {
 
-            cli('successfully generated json for "' . $url . '"');
+            cli('successfully generated JSON formatted log for "' . $url . '"');
 
         } else {
 
-            cli('failed to generate json for "' . $url . '"');
+            cli('failed to generate JSON formatted log for "' . $url . '"');
         }
     }
 
 } elseif (array_key_exists('w', $opt)) {
 
-    cli('watchlist');
 
     foreach ($config['url'] as $url ) {
 
@@ -228,11 +227,11 @@ if (array_key_exists('a', $opt)) {
 
         if (log($url)) {
 
-            cli('successfully updated logfile for "' . $url . '"');
+            cli('successfully updated log for "' . $url . '"');
 
         } else {
 
-            cli('failed to update logfile for "' . $url . '"');
+            cli('failed to update log for "' . $url . '"');
         }
     }
 }
