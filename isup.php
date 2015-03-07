@@ -144,7 +144,29 @@ function export($url)
 }
 
 /**
- * Create a log file for a given url.
+ * Get the JSON formatted log for a given ID.
+ *
+ * @param   int  $id
+ * @return  string|bool
+ */
+function get_json($id)
+{
+    $config = $GLOBALS['config'];
+
+    if (! is_numeric($id) || $id < 0 || $id > count($config['url']) - 1) return false;
+
+    $url = $config['url'][$id];
+
+    $log  = $config['logpath'] . base64_encode($url) . '.log';
+    $json = $log . '.json';
+
+    if (! export($url)) return false;
+
+    return file_exists($json) ? file_get_contents($json) . PHP_EOL : false;
+}
+
+/**
+ * Create a log file for a given URL.
  *
  * @param   string  $url
  * @return  bool
@@ -211,6 +233,17 @@ if (array_key_exists('a', $opt)) {
 
             cli('failed to generate JSON formatted log for "' . $url . '"');
         }
+    }
+
+} elseif (array_key_exists('j', $opt)) {
+
+    if ($data = get_json($opt['j'])) {
+
+        echo $data;
+
+    } else {
+
+        cli('failed to get JSON formatted log for id "' . $opt['j'] . '"');
     }
 
 } elseif (array_key_exists('l', $opt)) {

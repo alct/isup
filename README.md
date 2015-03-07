@@ -67,9 +67,25 @@ Export current logs to JSON.
 isup -e
 ```
 
+### -j ID
 
+Print JSON formatted log for a given `ID`.
 
 ```bash
+isup -j 42
+```
+
+Example of returned data:
+
+```json
+{
+    "url": "example.com",
+    "log": {
+        "2015-01-01": 100,
+        "2015-01-02": 99,
+        "2015-01-03": 96
+    }
+}
 ```
 
 ### -l
