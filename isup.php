@@ -9,7 +9,7 @@ chdir(realpath(dirname(__FILE__)));
 
 // CLI options
 
-$opt = getopt('a:c:ew');
+$opt = getopt('a:c:ej:lu');
 
 
 // Get config
@@ -86,26 +86,24 @@ function check($url)
 /**
  * Wrap a given string and print it to the terminal.
  *
- * @param   string  $value
+ * @param   string  $string
  */
-function cli($value)
+function cli($string)
 {
-    echo 'isup: ' . $value . PHP_EOL;
+    echo 'isup: ' . $string . PHP_EOL;
 }
 
 /**
  * Combine and export a given raw log to a JSON file.
  *
- * @param   string  $src
+ * @param   string  $url
  * @return  bool
  */
-function export($src)
+function export($url)
 {
     $config = $GLOBALS['config'];
 
-    $src  = base64_encode($src);
-    $src  = $config['logpath'] . $src . '.log';
-
+    $src  = $config['logpath'] . base64_encode($url) . '.log';
     $dest = $src . '.json';
 
     if (! $handle = @fopen($src, 'r')) return false;
