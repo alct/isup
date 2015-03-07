@@ -221,7 +221,7 @@ if (array_key_exists('a', $opt)) {
         echo '- ' . $url . PHP_EOL;
     }
 
-} elseif (empty($opt)) {
+} elseif (array_key_exists('u', $opt)) {
 
     foreach ($config['url'] as $url) {
 

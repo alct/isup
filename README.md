@@ -80,6 +80,14 @@ List monitored resources and IDs.
 isup -l
 ```
 
+### -u
+
+Update logs.
+
+```bash
+isup -u
+```
+
 ## License
 
 [GPLv3](LICENSE)
