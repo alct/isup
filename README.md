@@ -10,24 +10,31 @@ Combined with `cron`, this tool logs the availability of one or several resource
 
 ## Installation
 
-Clone the repository and rename the config file:
+Clone the repository and create the config file:
 
 ```bash
-git clone https://github.com/alct/isup.git
-cd isup && mv config.example config.ini
+git clone https://github.com/alct/isup.git ~/isup
+cd isup && cp config.example config.ini
 ```
 
-Add URL(s) to the watchlist:
+Add `isup` to the PATH:
 
 ```bash
-php /path/to/isup.php -a "www.website.com" # or
-php /path/to/isup.php -a "$(cat /path/to/list)" # where "list" is a file containing one URL per line
+sudo ln -s ~/isup/isup.php /usr/local/bin/isup
+export PATH=$PATH
+```
+
+Add URL(s) to the list of monitored resources:
+
+```bash
+isup -a "example.com" # or
+isup -a "$(cat /path/to/list)" # where "list" is a file containing one URL per line
 ```
 
 Add the following rule to your crontab:
 
 ```bash
-*/10 * * * * php /path/to/isup.php
+*/10 * * * * /path/to/isup.php -u > /dev/null
 ```
 
 And... that's it.
