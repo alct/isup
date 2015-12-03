@@ -26,7 +26,7 @@ $config = parse_ini_file($configFile);
 
 if (empty($config['url']) && empty($opt['a'])) {
 
-    cli('no item in the list of monitored resources');
+    cli('the list of monitored resources is empty');
     exit;
 }
 
@@ -199,7 +199,7 @@ if (array_key_exists('a', $opt)) {
 
         } else {
 
-            cli('failed to add "' . $url . '" the list of monitored resources');
+            cli('failed to add "' . $url . '" to the list of monitored resources');
         }
     }
 
