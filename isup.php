@@ -70,7 +70,7 @@ function check($url)
             CURLOPT_REFERER        => 'http://google.com',
             CURLOPT_RETURNTRANSFER => true,
             CURLOPT_URL            => $url,
-            CURLOPT_USERAGENT      => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:25.0) Gecko/20100101 Firefox/29.0',
+            CURLOPT_USERAGENT      => 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:41.0) Gecko/20100101 Firefox/41.0',
             CURLOPT_SSL_VERIFYPEER => false,
             CURLOPT_TIMEOUT        => 10,
         ]
