@@ -24,7 +24,7 @@ if (! file_exists($configFile)) {
 
 $config = parse_ini_file($configFile);
 
-if (empty($config['url']) && empty($opt['a'])) {
+if (empty($config['url']) && empty($opt['a']) && empty($opt['c'])) {
 
     cli('the list of monitored resources is empty');
     exit;
