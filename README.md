@@ -1,6 +1,6 @@
 # IsUP?
 
-Combined with `cron`, this tool logs the availability of one or several resources(s) over time. To determine whether a resource is available, `isup` performs an HTTP GET request and follows any redirection. If the final HTTP answer differs from "200 OK" or if the request times out, the resource is considered unavailable.
+IsUp logs the availability of on-line resources over time. To determine whether a resource is available, IsUp performs an HTTP GET request and follows any redirection, if the final HTTP answer differs from "200 OK" or if the request times out, the resource is considered unavailable.
 
 ## Dependencies
 
